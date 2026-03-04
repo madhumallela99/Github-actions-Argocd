@@ -22,7 +22,6 @@ spec:
 
       - name: java-app
 
-        image: 123456789012.dkr.ecr.us-east-1.amazonaws.com/java-app:d4f32337f72eff20af2c99b59d09a8682363af89
-
+        image: 505342112116.dkr.ecr.ap-south-1.amazonaws.com/java-app
         ports:
         - containerPort: 8080
