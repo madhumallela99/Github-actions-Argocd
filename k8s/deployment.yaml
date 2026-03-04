@@ -12,16 +12,13 @@ spec:
       app: java-app
 
   template:
-
     metadata:
       labels:
         app: java-app
 
     spec:
       containers:
-
       - name: java-app
-
-        image: image: 505342112116.dkr.ecr.ap-south-1.amazonaws.com/java-app:IMAGE_TAG
+        image: 505342112116.dkr.ecr.ap-south-1.amazonaws.com/java-app:IMAGE_TAG
         ports:
         - containerPort: 8080
