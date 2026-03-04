@@ -66,5 +66,5 @@ jobs:
         git config --global user.name "madhumallela"
         git pull origin main --rebase
         git add k8s/deployment.yaml
-        git commit -m "Update image tag"
+        git commit -m "Update image tag" || echo "No changes to commit"
         git push
