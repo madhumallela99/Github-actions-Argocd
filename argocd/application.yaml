@@ -8,7 +8,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://github.com/YOUR_USERNAME/java-eks-demo
+    repoURL: https://github.com/madhumallela99/Github-actions-Argocd
     targetRevision: main
     path: k8s
 
