@@ -19,6 +19,6 @@ spec:
     spec:
       containers:
       - name: java-app
-        image: 505342112116.dkr.ecr.ap-south-1.amazonaws.com/java-app:IMAGE_TAG
+        image: 505342112116.dkr.ecr.ap-south-1.amazonaws.com/java-app:1e47e91381c96543d0b5db116066924e42eed9fe
         ports:
         - containerPort: 8080
