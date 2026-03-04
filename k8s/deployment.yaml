@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: java-app
-        image: 505342112116.dkr.ecr.ap-south-1.amazonaws.com/java-app:8309397ec82aeef393dd893709d04ac6b52c8321
+        image: 505342112116.dkr.ecr.ap-south-1.amazonaws.com/java-app:f6b3ec4bd5776359ee9d3428132dd98363ee3f67
 kind: Deployment
 
 metadata:
@@ -40,7 +40,7 @@ spec:
     spec:
       containers:
       - name: java-app
-        image: 505342112116.dkr.ecr.ap-south-1.amazonaws.com/java-app:8309397ec82aeef393dd893709d04ac6b52c8321
+        image: 505342112116.dkr.ecr.ap-south-1.amazonaws.com/java-app:f6b3ec4bd5776359ee9d3428132dd98363ee3f67
         ports:
         - containerPort: 8080
         ports:
