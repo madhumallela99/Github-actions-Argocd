@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+
 permissions:
   contents: write
 
@@ -56,15 +57,21 @@ jobs:
       run: |
         docker push ${{ secrets.ECR_REGISTRY }}/java-app:$IMAGE_TAG
 
+    # Pull latest repo BEFORE modifying files
+    - name: Pull Latest Repo
+      run: |
+        git config --global user.email "github-actions@github.com"
+        git config --global user.name "github-actions"
+        git pull origin main --rebase
+
+    # Update deployment image
     - name: Update K8s Image
       run: |
-        sed -i "s|IMAGE_TAG|$IMAGE_TAG|g" k8s/deployment.yaml
+        sed -i "s|image: .*|image: ${{ secrets.ECR_REGISTRY }}/java-app:$IMAGE_TAG|g" k8s/deployment.yaml
 
+    # Commit and push changes
     - name: Commit Changes
       run: |
-        git config --global user.email "madhumalleala111@gmail.com"
-        git config --global user.name "madhumallela"
-        git pull origin main --rebase
         git add k8s/deployment.yaml
-        git commit -m "Update image tag" || echo "No changes to commit"
-        git push
+        git diff --cached --quiet || git commit -m "Update image tag $IMAGE_TAG"
+        git push origin main
